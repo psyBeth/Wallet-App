@@ -4,7 +4,7 @@
 
 //? spreadsheet
 
-//? expenditure form
+//? payment form
 
 //? expense table
 

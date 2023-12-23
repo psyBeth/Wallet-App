@@ -26,30 +26,30 @@
 
 
       <form id="harcama-formu" class="row g-3 p-3 mt-4 border rounded-4 m-0">
-        <h4 class="text-center">Harcama Formu</h4>
+        <h4 class="text-center">Payment Form</h4>
         <div class="col-6">
-          <label for="tarih" class="form-label">Tarih</label>
-          <input type="date" class="form-control" id="tarih" required />
+          <label for="tarih" class="form-label">Date</label>
+          <input type="date" class="form-control" id="tarih" placeholder="dd.mm.yyyy" required />
         </div>
         <div class="col-6">
-          <label for="miktar" class="form-label">Harcama Miktar</label>
+          <label for="miktar" class="form-label">Amount</label>
           <input
             type="number"
             class="form-control"
             id="miktar"
-            placeholder="1000 ₺"
+            placeholder="1000 $"
             step="0.01"
             min="0"
             required
           />
         </div>
         <div class="col-12">
-          <label for="harcama-alani" class="form-label">Harcama Alanı</label>
+          <label for="harcama-alani" class="form-label">Expense Category</label>
           <input
             type="text"
             class="form-control"
             id="harcama-alani"
-            placeholder="Kira, Fatura, Kredi Kartı"
+            placeholder="Rent, Bill, Credit Card"
             required
           />
         </div>
@@ -57,7 +57,7 @@
 
         <div class="col-12 text-center">
           <button id="kaydet" type="submit" class="btn btn-danger">
-            Kaydet
+            Save
           </button>
         </div>
       </form>
@@ -70,11 +70,11 @@
           step="0.01"
           min="0"
           autofocus
-          placeholder="Gelirinizi giriniz."
+          placeholder="Enter your income."
           required
         />
         <button id="ekle-btn" type="submit" class="btn btn-success">
-          Ekle
+          Add
         </button>
       </form>
       <table
@@ -83,10 +83,10 @@
       >
         <thead>
           <tr>
-            <th scope="col" class="w-25">Tarih</th>
-            <th scope="col" class="w-50">Harcama Alanı</th>
-            <th scope="col">Miktar (₺)</th>
-            <th scope="col">İşlem</th>
+            <th scope="col" class="w-25">Date</th>
+            <th scope="col" class="w-50">Expense Category</th>
+            <th scope="col">Amount ($)</th>
+            <th scope="col">Transaction</th>
           </tr>
         </thead>
         <tbody id="harcama-body">
@@ -105,15 +105,15 @@
       >
         <tbody class="text-end">
           <tr>
-            <th>Geliriniz (₺) :</th>
+            <th>Your Income ($) :</th>
             <td id="geliriniz" style="width: 100px;">0</td>
           </tr>
           <tr>
-            <th>Gideriniz (₺) :</th>
+            <th>Your Outcome ($) :</th>
             <td id="gideriniz">0</td>
           </tr>
           <tr>
-            <th id="kalanTh">Kalan (₺) :</th>
+            <th id="kalanTh">Remaining ($) :</th>
             <td id="kalan">0</td>
           </tr>
         </tbody>
@@ -121,7 +121,7 @@
 
       <section class="text-center">
         <button id="temizle-btn" class="btn btn-secondary">
-          Bilgileri Temizle
+          Clear the Information
         </button>
       </section>
     </main>
