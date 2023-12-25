@@ -6,6 +6,7 @@ const addForm = document.getElementById("ekle-formu")
 
 //? variables
 let incomes = 0;
+let expenseList = [];
 
 //? spreadsheet
 const urIncomeTd = document.getElementById("geliriniz")
@@ -32,14 +33,35 @@ addForm.addEventListener("click", (e) => {
     urIncomeTd.innerText = incomes
     addForm.reset()
 })
-//bring back the data from localStorage whenever the page is loaded
+
+//? bring back the data from localStorage whenever the page is loaded
 window.addEventListener("load", () => {
     incomes = Number(localStorage.getItem("incomes")) || 0
     urIncomeTd.innerText = incomes
 })
 
-//? When the page is first opened, it prints the data in localStorage and assigns it to variables.
-
 //? Making expense entries
+payForm.addEventListener("submit", (e) =>  {
+    e.preventDefault() //prevents reload
+
+    const newPayment = {
+        id: new Date().getTime(),
+        // date: dateInput value,
+        tarih: new Date(dateInput.value).toLocaleDateString(),
+        alan: payInput.value,
+        miktar: amountInput.value
+    }
+
+    //console.log(newPayment);
+
+    payForm.reset()
+    dateInput.valueAsDate = new Date()
+
+    expenseList.push(newPayment)
+    localStorage.setItem("expenses", JSON.stringify(expenseList))
+
+    printExpenseDom(newPayment)
+    calculateUpdate()
+})
 
 //? send the expense to Dom
