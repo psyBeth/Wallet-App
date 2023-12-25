@@ -26,6 +26,11 @@ addForm.addEventListener("click", (e) => {
     urIncomeTd.innerText = incomes
     addForm.reset()
 })
+//bring back the data from localStorage whenever the page loaded
+window.addEventListener("load", () => {
+    incomes = Number(localStorage.getItem("incomes")) || 0
+    urIncomeTd.innerText = incomes
+})
 
 //? When the page is first opened, it prints the data in localStorage and assigns it to variables.
 
