@@ -91,4 +91,6 @@ const printExpenseDom = ({id, miktar, tarih, alan}) => {
         appendTd(miktar),
         appendLastTd()
     )
+
+    expenseBody.append(tr) 
 }
