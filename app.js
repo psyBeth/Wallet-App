@@ -65,3 +65,30 @@ payForm.addEventListener("submit", (e) =>  {
 })
 
 //? send the expense to Dom
+const printExpenseDom = ({id, miktar, tarih, alan}) => {
+
+    const tr = document.createElement("tr"); 
+
+    const appendTd = (content) => {
+        const td = document.createElement("td");
+        td.textContent = content;
+        return td;
+    }
+
+    const createLastTd = () => {
+        const td = document.createElement("td");
+        const iElement = document.createElement("i");
+        iElement.id = id;
+        iElement.className = "fa-solid fa-trash-can text-danger"
+        iElement.type = "button";
+        td.appendChild(iElement);
+        return td;
+    }
+
+    tr.append(
+        appendTd(tarih),
+        appendTd(alan),
+        appendTd(miktar),
+        appendLastTd()
+    )
+}
