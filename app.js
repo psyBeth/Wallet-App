@@ -1,6 +1,19 @@
 //? selectors
+const addBtn = document.getElementById("ekle-btn");
+const incomeInput = document.getElementById("gelir-input")
+const addForm = document.getElementById("ekle-formu")
+
 
 //? variables
+let incomes = 0;
+
+// ekle formu
+addForm.addEventListener("click", (e) => {
+    e.preventDefault()
+    incomes = incomes + Number(incomeInput.value)
+    console.log(incomes);
+    addForm.reset()
+})
 
 //? spreadsheet
 
