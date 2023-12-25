@@ -8,6 +8,9 @@ const addForm = document.getElementById("ekle-formu")
 let incomes = 0;
 
 //? spreadsheet
+const urIncomeTd = document.getElementById("geliriniz")
+const urOutcomeTd = document.getElementById("gideriniz")
+const remainTd = document.getElementById("kalan")
 
 //? payment form
 
@@ -20,6 +23,7 @@ addForm.addEventListener("click", (e) => {
     console.log(incomes);
     //storing data
     localStorage.setItem("incomes", incomes)
+    urIncomeTd.innerText = incomes
     addForm.reset()
 })
 
