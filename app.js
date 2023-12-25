@@ -13,6 +13,10 @@ const urOutcomeTd = document.getElementById("gideriniz")
 const remainTd = document.getElementById("kalan")
 
 //? payment form
+const payForm = document.getElementById("harcama-formu")
+const payInput = document.getElementById("harcama-alani")
+const dateInput = document.getElementById("tarih")
+const amountInput = document.getElementById("miktar")
 
 //? expense table
 
@@ -26,7 +30,7 @@ addForm.addEventListener("click", (e) => {
     urIncomeTd.innerText = incomes
     addForm.reset()
 })
-//bring back the data from localStorage whenever the page loaded
+//bring back the data from localStorage whenever the page is loaded
 window.addEventListener("load", () => {
     incomes = Number(localStorage.getItem("incomes")) || 0
     urIncomeTd.innerText = incomes
