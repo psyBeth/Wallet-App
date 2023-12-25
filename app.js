@@ -19,6 +19,8 @@ const dateInput = document.getElementById("tarih")
 const amountInput = document.getElementById("miktar")
 
 //? expense table
+const expenseBody = document.getElementById("harcama-body")
+const clearBtn = document.getElementById("temizle-btn")
 
 //? add income form
 addForm.addEventListener("click", (e) => {
