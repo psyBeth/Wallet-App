@@ -129,3 +129,15 @@ expenseBody.addEventListener("click", (e) => {
 
     calculateAndUpdate()
 })
+
+clearBtn.addEventListener("click", () => {
+    if(confirm('Do you confirm deleting the informations?')) {
+        expenseList = []
+        incomes = 0
+        // localStorage.clear()   //deletes the local storage data
+        localStorage.removeItem('incomes')
+        localStorage.removeItem('expenses')
+        expenseBody.innerHTML = "" // deletes the expenses from DOM
+        calculateAndUpdate()
+    }
+})
