@@ -103,13 +103,13 @@ const printExpenseDom = ({id, miktar, tarih, alan}) => {
 }
 
 const calculateAndUpdate = () => {
-    urIncomeTd.innerText = incomes
+    urIncomeTd.innerText = new Intl.NumberFormat().format(incomes)
 
     const outcomes = expenseList.reduce(
         (total, expense) => total + Number(expense.miktar),0
     )
-    urOutcomeTd.innerText = outcomes
-    remainTd.innerText = incomes - outcomes
+    urOutcomeTd.innerText = new Intl.NumberFormat().format(outcomes)
+    remainTd.innerText = new Intl.NumberFormat().format(incomes-outcomes)
 
     const debtor = incomes - outcomes < 0;
 
