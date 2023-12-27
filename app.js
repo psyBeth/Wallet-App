@@ -38,7 +38,13 @@ addForm.addEventListener("click", (e) => {
 window.addEventListener("load", () => {
     incomes = Number(localStorage.getItem("incomes")) || 0
     urIncomeTd.innerText = incomes
-})
+    dateInput.valueAsDate = new Date()
+    expenseList = JSON.parse(localStorage.getItem("expenses")) || []
+
+    expenseList.forEach((expense) => printExpenseDom(expense))
+    calculateAndUpdate()
+        
+    });
 
 //? Making expense entries
 payForm.addEventListener("submit", (e) =>  {
@@ -93,4 +99,14 @@ const printExpenseDom = ({id, miktar, tarih, alan}) => {
     )
 
     expenseBody.append(tr) 
+}
+
+const calculateAndUpdate = () => {
+    urIncomeTd.innerText = incomes
+
+    const outcomes = expenseList.reduce(
+        (total, expense) => total + Number(expense.miktar),0
+    )
+    urOutcomeTd.innerText = outcomes
+    remainTd.innerText = incomes - outcomes
 }
