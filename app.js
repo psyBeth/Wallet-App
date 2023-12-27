@@ -12,6 +12,7 @@ let expenseList = [];
 const urIncomeTd = document.getElementById("geliriniz")
 const urOutcomeTd = document.getElementById("gideriniz")
 const remainTd = document.getElementById("kalan")
+const remainTh = document.getElementById("kalanTh")
 
 //? payment form
 const payForm = document.getElementById("harcama-formu")
@@ -109,4 +110,9 @@ const calculateAndUpdate = () => {
     )
     urOutcomeTd.innerText = outcomes
     remainTd.innerText = incomes - outcomes
+
+    const debtor = incomes - outcomes < 0;
+
+    remainTd.classList.toggle('text-danger', debtor)
+    remainTh.classList.toggle('text-danger', debtor)
 }
