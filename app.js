@@ -116,3 +116,16 @@ const calculateAndUpdate = () => {
     remainTd.classList.toggle('text-danger', debtor)
     remainTh.classList.toggle('text-danger', debtor)
 }
+
+expenseBody.addEventListener("click", (e) => {
+    if(e.target.classList.contains("fa-trash-can")) {
+        e.target.parentElement.remove()
+    }
+
+    const id = e.target.id
+    expenseList = expenseList.filter((expense => expense.id != id))
+
+    localStorage.setItem("expenses", JSON.stringify(expenseList))
+
+    calculateAndUpdate()
+})
